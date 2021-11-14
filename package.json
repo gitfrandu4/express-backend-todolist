@@ -1,0 +1,27 @@
+{
+  "name": "todolist-api",
+  "version": "1.0.0",
+  "description": "Backend para un todo-list (otro más)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitfrandu4/express-backend-todolist.git"
+  },
+  "keywords": [
+    "backend",
+    "todolist",
+    "express"
+  ],
+  "author": "Homer J. Simpson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitfrandu4/express-backend-todolist/issues"
+  },
+  "homepage": "https://github.com/gitfrandu4/express-backend-todolist#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
