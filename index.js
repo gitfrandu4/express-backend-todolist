@@ -1,12 +1,14 @@
 const express = require('express');
+const mongoose = require('mongoose')
 const config = require('./config');
 const app = express();
 
-const todosRouter = require('./api/todos.router')
+mongoose.connect(`mongodb+srv://${config.DB_USER}:${config.DB_PASSWORD}@cluster0.vcqck.mongodb.net/${config.DB_NAME}?retryWrites=true&w=majority`);
 
-// app.get('/', (req, res) => {
-//     return res.send('hola');
-// }) 
+// Este middleware nos permite poder recibir bodies del tipo JSON
+app.use(express.json())
+
+const todosRouter = require('./src/api/todos.router')
 
 app.use('/todos', todosRouter)
 
