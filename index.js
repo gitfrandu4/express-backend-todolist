@@ -8,9 +8,11 @@ mongoose.connect(`mongodb+srv://${config.DB_USER}:${config.DB_PASSWORD}@cluster0
 // Este middleware nos permite poder recibir bodies del tipo JSON
 app.use(express.json())
 
-const todosRouter = require('./src/api/todos.router')
+const todosRouter = require('./src/api/todos/todos.router')
+const usersRouter = require('./src/api/users/users.router')
 
-app.use('/todos', todosRouter)
+app.use('/api/todos', todosRouter)
+app.use('/api/users', usersRouter)
 
 app.listen(config.PORT, (err) => {
     if (!err) {
