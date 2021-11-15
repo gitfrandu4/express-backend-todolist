@@ -1,4 +1,4 @@
-const model = require("./todos.model.js");
+const TODOmodel = require("./todos.model.js");
 
 module.exports = {
 	getAll,
@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function getAll(req, res) {
-	return model
+	return TODOmodel
 		.find()
 		.then((results) => {
 			return res.json(results);
@@ -20,7 +20,7 @@ function getAll(req, res) {
 }
 
 function getTodo(req, res) {
-	return model
+	return TODOmodel
 		.findOne({ _id: req.params.id })
 		.then((results) => {
 			return res.json(results);
@@ -38,10 +38,10 @@ function createTodo(req, res) {
 	// todo.save().then(//....// )
 
 	// Opción 2:
-	return model
+	return TODOmodel
 		.create(req.body)
 		.then((results) => {
-			return results.json(results);
+			return res.json(results);
 		})
 		.catch((err) => {
 			return res.status(500).json(err);
@@ -49,7 +49,7 @@ function createTodo(req, res) {
 }
 
 function removeTodo(req, res) {
-	return model
+	return TODOmodel
 		.findByIdAndRemove(req.params.id)
 		.then((results) => {
 			return res.json(results);
@@ -60,7 +60,7 @@ function removeTodo(req, res) {
 }
 
 function modifyTodo(req, res) {
-	return model
+	return TODOmodel
 		.findByIdAndUpdate(req.params.id, req.body, { new: true })
 		.then((results) => {
 			return res.json(results);

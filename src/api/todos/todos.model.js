@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
 
 // 3. 
 // todo => nombre del recurso que podemos guardar en la bd
-const model = mongoose.model('todo', schema)
+const TODOmodel = mongoose.model('todo', schema)
 
 // 4. Exportamos el modelo
-module.exports = model;
+module.exports = TODOmodel;
