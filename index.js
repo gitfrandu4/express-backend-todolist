@@ -1,4 +1,5 @@
 const express = require('express');
+const config = require('./config');
 const app = express();
 
 const todosRouter = require('./api/todos.router')
@@ -9,8 +10,8 @@ const todosRouter = require('./api/todos.router')
 
 app.use('/todos', todosRouter)
 
-app.listen(5000, (err) => {
+app.listen(config.PORT, (err) => {
     if (!err) {
-        console.log('Servidor escuchando en el puerto 5000')
+        console.log('Servidor escuchando en el puerto: ' + config.PORT)
     }
 });
