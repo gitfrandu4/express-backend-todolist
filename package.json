@@ -6,10 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gitfrandu4/express-backend-todolist.git"
-  },
+  "repository": "git+https://github.com/gitfrandu4/express-backend-todolist.git",
   "keywords": [
     "backend",
     "todolist",
@@ -22,6 +19,12 @@
   },
   "homepage": "https://github.com/gitfrandu4/express-backend-todolist#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.15",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
   }
 }

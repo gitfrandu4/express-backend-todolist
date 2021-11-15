@@ -1,23 +1,10 @@
 const router = require('express').Router();
+const controller = require('./todos.controller')
 
-router.get('', (req, res) => {
-    return res.json([])
-})
+router.get('', controller.getAll )
+router.get('/:id', controller.getTodo )
+router.post('', controller.createTodo )
+router.delete('/:id', controller.removeTodo )
+router.patch('/:id', controller.modifyTodo )
 
-router.get('/:id', (req, res) => {
-    return res.json([])
-})
-
-router.post('', (req, res) => {
-    return res.json([])
-})
-
-router.delete('/:id', (req, res) => {
-    return res.json([])
-})
-
-router.patch('/:id', (req, res) => {
-    return res.json([])
-})
-
-module.exports();
+module.exports = router;
