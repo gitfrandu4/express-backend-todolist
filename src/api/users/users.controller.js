@@ -1,15 +1,24 @@
 const USERmodel = require("./users.model.js");
 
+/**
+ *     GET :    /users            getALL
+ *     GET :    /users/:email     getUser
+ *     POST :   /users            createUser
+ *     PATCH :  /users            modifyUser
+ *     DELETE : /users            removeUser
+ *  
+ */
+
 module.exports = {
 	getAll,
-	getTodo,
-	createTodo,
-	removeTodo,
-	modifyTodo,
+	getUser,
+	createUser,
+	removeUser,
+	modifyUser,
 };
 
 function getAll(req, res) {
-	return TODOmodel
+	return USERmodel
 		.find()
 		.then((results) => {
 			return res.json(results);
@@ -19,9 +28,9 @@ function getAll(req, res) {
 		});
 }
 
-function getTodo(req, res) {
-	return TODOmodel
-		.findOne({ _id: req.params.id })
+function getUser(req, res) {
+	return USERmodel
+		.findOne({ email: req.params.email })
 		.then((results) => {
 			return res.json(results);
 		})
@@ -30,15 +39,8 @@ function getTodo(req, res) {
 		});
 }
 
-function createTodo(req, res) {
-	// Opción 1:
-	// const todo = new model({
-	//     title: "Nueva tarea"
-	// })
-	// todo.save().then(//....// )
-
-	// Opción 2:
-	return TODOmodel
+function createUser(req, res) {
+	return USERmodel
 		.create(req.body)
 		.then((results) => {
 			return res.status(201).json(results);
@@ -48,8 +50,8 @@ function createTodo(req, res) {
 		});
 }
 
-function removeTodo(req, res) {
-	return TODOmodel
+function removeUser(req, res) {
+	return USERmodel
 		.findByIdAndRemove(req.params.id)
 		.then((results) => {
 			return res.json(results);
@@ -59,8 +61,8 @@ function removeTodo(req, res) {
 		});
 }
 
-function modifyTodo(req, res) {
-	return TODOmodel
+function modifyUser(req, res) {
+	return USERmodel
 		.findByIdAndUpdate(req.params.id, req.body, { new: true })
 		.then((results) => {
 			return res.json(results);

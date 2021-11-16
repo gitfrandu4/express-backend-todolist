@@ -6,5 +6,5 @@ module.exports = {
 	PORT: process.env.PORT || 3000,
 	DB_USER: process.env.DB_USER || 'Homer',
 	DB_PASSWORD: process.env.DB_PASSWORD || 'password',
-	DB_NAME: process.env.DB_NAME || todolistd
+	DB_NAME: process.env.DB_NAME || "todolistd"
 };
