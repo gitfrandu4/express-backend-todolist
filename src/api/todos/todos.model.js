@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
     title: {
         required: true,
         type: String,
-        minlength: 5,
+        minlength: 1,
         maxlength: 255,
     },
     completed: {

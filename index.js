@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const config = require('./config');
+const cors = require('cors')
 const app = express();
 
 mongoose.connect(`mongodb+srv://${config.DB_USER}:${config.DB_PASSWORD}@cluster0.vcqck.mongodb.net/${config.DB_NAME}?retryWrites=true&w=majority`);
 
+app.use(cors())
 // Este middleware nos permite poder recibir bodies del tipo JSON
 app.use(express.json())
 

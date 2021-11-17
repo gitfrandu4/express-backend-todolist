@@ -44,6 +44,7 @@ function createTodo(req, res) {
 			return res.json(results);
 		})
 		.catch((err) => {
+			console.log(err)
 			return res.status(500).json(err);
 		});
 }
