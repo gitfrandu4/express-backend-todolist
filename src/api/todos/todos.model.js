@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
     title: {
         required: true,
         type: String,
-        minlength: 1,
+        minlength: [4, "La tarea tiene que tener mínimo 4 letras"],
         maxlength: 255,
     },
     completed: {
