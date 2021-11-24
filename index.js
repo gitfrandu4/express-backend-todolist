@@ -12,7 +12,9 @@ app.use(express.json())
 
 const todosRouter = require('./src/api/todos/todos.router')
 const usersRouter = require('./src/api/users/users.router')
+const authRouter = require('./src/auth/auth.router')
 
+app.use('/auth', authRouter)
 app.use('/api/todos', todosRouter)
 app.use('/api/users', usersRouter)
 
