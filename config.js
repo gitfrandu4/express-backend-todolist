@@ -7,5 +7,5 @@ module.exports = {
 	DB_USER: process.env.DB_USER || 'Homer',
 	DB_PASSWORD: process.env.DB_PASSWORD || 'password',
 	DB_NAME: process.env.DB_NAME || "todolistd",
-	SECRET: process.env.SECRET || "MyLittlePony",
+	SECRET_KEY: process.env.SECRET || "MyLittlePony",
 };
